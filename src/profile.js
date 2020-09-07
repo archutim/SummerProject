@@ -48,7 +48,7 @@ export default class Profile extends React.Component {
   }
 
   sendreq(){
-    fetch('http://192.168.1.113/php/RN.php', {
+    fetch('http://140.114.206.145/php/RN.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'

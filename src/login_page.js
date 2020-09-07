@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { AppLoading } from 'expo';
+import {ImageBackground} from 'react-native';
 import { Container, Text, Header, Body, Title, Left, Button, Form, Item, Input, View} from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
@@ -27,7 +28,7 @@ export default class Login_page extends React.Component {
       ...Ionicons.font,
     });
     this.setState({ isReady: true });
-    fetch('http://192.168.1.113/php/CheckAuth.php', {
+    fetch('http://140.114.206.145/php/CheckAuth.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -55,7 +56,7 @@ export default class Login_page extends React.Component {
       })
       .catch(e => console.log(e));
 
-      fetch('http://192.168.1.113/php/login.php', {
+      fetch('http://140.114.206.145/php/login.php', {
         method: 'POST',
         header: {
           'Content-Type': 'application/json'
@@ -93,7 +94,7 @@ export default class Login_page extends React.Component {
       })
       .catch(e => console.log(e));
 
-      fetch('http://192.168.1.113/php/signup.php', {
+      fetch('http://140.114.206.145/php/signup.php', {
         method: 'POST',
         header: {
           'Content-Type': 'application/json'
@@ -124,26 +125,24 @@ export default class Login_page extends React.Component {
     if (!this.state.isReady) {
       return <AppLoading />;
     }
-
     return (
       <Container>
-        <Header>
-          <Body>
-            <Title>Login_page</Title>
-          </Body>
+        <ImageBackground source={require('../picture/login.jpg')} style={{flex: 1, width: '100%', height: '100%'}} resizeMode='cover'>
+        <Header transparent>
+            <Title style={{fontSize: 30}}>Login_page</Title>
         </Header>
-        <Form>
-            <Item>
+        <Form style={{marginTop: '10%'}}>
+            <Item style={{width: "80%", marginLeft: 'auto', marginRight: 'auto'}}>
               <Input placeholder="Username" onChangeText={(user) => {this.setState({user: user});}}/>
             </Item>
-            <Item last>
+            <Item style={{marginTop: '10%', width: "80%", marginLeft: 'auto', marginRight: 'auto'}}>
               <Input placeholder="Password" secureTextEntry={true} onChangeText={(password) => {this.setState({password: password});}}/>
             </Item>
         </Form>
-        <Button full onPress={() => this.Login()}>
-            <Text>Login</Text>
+        <Button rounded style={{marginTop: '30%', marginLeft: 'auto', marginRight: 'auto', justifyContent: 'center', backgroundColor: 'pink'}} onPress={() => this.Login()}>
+            <Text style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', textAlign:'center'}}>Login</Text>
         </Button>
-        <Button full onPress={() => this.show()}>
+        <Button full onPress={() => this.show()} style={{display: "none"}}>
             <Text>Show up</Text>
         </Button>
         <View style={{display: (this.state.show == false) ? 'none' : 'flex'}}>
@@ -159,6 +158,7 @@ export default class Login_page extends React.Component {
             <Text>Signup</Text>
           </Button>
         </View>
+        </ImageBackground>
       </Container>
     );
   }

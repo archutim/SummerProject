@@ -1,10 +1,9 @@
 import React from 'react';
 import { AppLoading } from 'expo';
-import {ScrollView}  from 'react-native';
+import {ScrollView, ImageBackground}  from 'react-native';
 import { Container, Text, Body, Content, Card, CardItem} from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
-import Match_page from './match_page';
 export default class Tab1 extends React.Component {
   constructor(props) {
     super(props);
@@ -30,11 +29,11 @@ export default class Tab1 extends React.Component {
 
 
     return (
-      <Container>
+      <Container style={{backgroundColor: '#80cef8'}}>
         <ScrollView>
           <Content padder>
-            <Card>
-              <CardItem button onPress={() => this.props.navigation.navigate('Match_page', {kind: 'Basketball', user: this.props.user})}>
+            <Card transparent>
+              <CardItem style={{borderRadius:50}} button onPress={() => this.props.navigation.navigate('Match_page', {kind: 'Basketball', user: this.props.user})}>
                 <Body>
                   <Text>
                     Match
@@ -42,8 +41,8 @@ export default class Tab1 extends React.Component {
                 </Body>
               </CardItem>
             </Card>
-            <Card>
-              <CardItem button onPress={() => this.props.navigation.navigate('Team_manager', {kind: 'Basketball', user: this.props.user})}>
+            <Card transparent>
+              <CardItem style={{borderRadius:50}} button onPress={() => this.props.navigation.navigate('Team_manager', {kind: 'Basketball', user: this.props.user})}>
                 <Body>
                   <Text>
                     Team manager
@@ -51,15 +50,15 @@ export default class Tab1 extends React.Component {
                 </Body>
               </CardItem>
             </Card>
-            <Card>
-              <CardItem button onPress={() => this.props.navigation.navigate('Match_page', {kind: 'Basketball', user: this.props.user})}>
+            {/* <Card transparent>
+              <CardItem style={{borderRadius:50}} button onPress={() => this.props.navigation.navigate('Match_page', {kind: 'Basketball', user: this.props.user})}>
                 <Body>
                   <Text>
                     Match Log
                   </Text>
                 </Body>
               </CardItem>
-            </Card>
+            </Card> */}
           </Content>
         </ScrollView>
       </Container>

@@ -13,7 +13,8 @@ import Match_page from './src/match_page';
 import Team_manager from './src/team_manager';
 import Pm_page from './src/pm_page';
 import Login_page from './src/login_page';
-import Team_create from './src/team_create';
+import Team_create_basketball from './src/team_create_basketball';
+import Team_create_volleyball from './src/team_create_volleyball';
 const Stack = createStackNavigator();
 export default class App extends React.Component {
   constructor(props) {
@@ -47,7 +48,8 @@ export default class App extends React.Component {
             <Stack.Screen name="Team_manager" component={Team_manager}/>
             <Stack.Screen name="Pm_page" component={Pm_page}/>
             <Stack.Screen name="Login_page" component={Login_page}/>
-            <Stack.Screen name="Team_create" component={Team_create}/>
+            <Stack.Screen name="Team_create_basketball" component={Team_create_basketball}/>
+            <Stack.Screen name="Team_create_volleyball" component={Team_create_volleyball}/>
           </Stack.Navigator>
         </NavigationContainer>
       </Container>

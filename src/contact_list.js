@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, ImageBackground} from 'react-native';
 import { AppLoading } from 'expo';
 import { Container, Text, Header, Body, Title, Left, Button, Card, CardItem} from 'native-base';
 import * as Font from 'expo-font';
@@ -15,7 +15,7 @@ export default class Contact_list extends React.Component {
       refreshing: false,
     };
     this.interval = setInterval(() =>{
-      fetch('http://192.168.1.113/php/Contact_list.php', {
+      fetch('http://140.114.206.145/php/Contact_list.php', {
         method: 'POST',
         header: {
           'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export default class Contact_list extends React.Component {
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
       ...Ionicons.font,
     });
-    fetch('http://192.168.1.113/php/Contact_list.php', {
+    fetch('http://140.114.206.145/php/Contact_list.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ export default class Contact_list extends React.Component {
     this.setState({ isReady: true });
   }
   async loadmore(){
-    await fetch('http://192.168.1.113/php/Contact_list.php', {
+    await fetch('http://140.114.206.145/php/Contact_list.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -84,26 +84,30 @@ export default class Contact_list extends React.Component {
     const renderItem = ({ item }) => (
       <Card>
         <CardItem button onPress={() => this.props.navigation.navigate('Pm_page', {sender:this.props.route.params.user, receiver: item.Contact})}>
-          <Body>
-          <Text>Contact: {item.Contact}, Last_message: {item.Last_message}, Last_submission: {item.Last_submission}</Text>
+          <Body style={{height: 80, overflow: 'hidden'}}>
+            <Text style={{fontFamily: 'serif', fontWeight: 'bold', fontSize: 22}}>{item.Contact}</Text>
+            <Text style={{height: '40%'}}>{item.sender}:{item.Last_message}</Text>
+            <Text style={{marginLeft: '50%', fontFamily: 'sans-serif-thin'}}>{item.Last_submission}</Text>
           </Body>
         </CardItem>
       </Card>
     );
     return (
       <Container>
-        <Header >
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Text>Back</Text>
-            </Button>
-          </Left>
-          <Body>
-            <Title>ChatRoom</Title>
-          </Body>
-        </Header>
-        <FlatList data={this.state.contact_list} renderItem={renderItem} keyExtractor={(item) => item.Last_submission} refreshing={this.state.refreshing} onRefresh={() => this.loadmore()} onEndReachedThreshold={0.05} onEndReached={() => this.loadmore()}>
-        </FlatList>
+        <ImageBackground source={require('../picture/contact.jpg')} style={{flex: 1, width: '100%', height: '100%'}} resizeMode='cover'>
+          <Header >
+            <Left>
+              <Button transparent onPress={() => this.props.navigation.goBack()}>
+                <Text>Back</Text>
+              </Button>
+            </Left>
+            <Body>
+              <Title>ChatRoom</Title>
+            </Body>
+          </Header>
+          <FlatList data={this.state.contact_list} renderItem={renderItem} keyExtractor={(item) => item.Last_submission} refreshing={this.state.refreshing} onRefresh={() => this.loadmore()} onEndReachedThreshold={0.05} onEndReached={() => this.loadmore()}>
+          </FlatList>
+        </ImageBackground>
       </Container>
     );
   }
