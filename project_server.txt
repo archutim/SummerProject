@@ -1,0 +1,65 @@
+pkg install apache24
+pkg install mysql80-server
+pkg install mysql80-client
+pkg install php74
+pkg install mod_php74
+pkg install php74_mysqli
+pkg install pdo_mysql
+pkg install php74-json
+pkg install php74-composer
+
+composer require firebase/php-jwt
+
+------------
+
+apache24-2.4.43                Version 2.4.x of Apache web server
+apr-1.7.0.1.6.1_1              Apache Portability Library
+c-ares-1.16.1                  Asynchronous DNS resolver library
+ca_root_nss-3.54               Root certificate bundle from the Mozilla Project
+curl-7.71.0                    Command line tool and library for transferring data with URLs
+cyrus-sasl-2.1.27_1            RFC 2222 SASL (Simple Authentication and Security Layer)
+db5-5.3.28_7                   Oracle Berkeley DB, revision 5.3
+dialog4ports-0.1.6             Console Interface to configure ports
+expat-2.2.8                    XML 1.0 parser written in C
+gdbm-1.18.1_1                  GNU database manager
+gettext-runtime-0.20.2         GNU gettext runtime libraries and programs
+gmake-4.3_2                    GNU version of 'make' utility
+groff-1.22.4_3                 Software typesetting package
+icu-67.1,1                     International Components for Unicode (from IBM)
+indexinfo-0.3.1                Utility to regenerate the GNU info page index
+joe-4.6,1                      Joe's Own Editor
+libargon2-20190702             Memory hard password hashing program and library
+libedit-3.1.20191231,1         Command line editor library
+libevent-2.1.11_1              API for executing callback functions on events or timeouts
+libiconv-1.16                  Character set conversion library
+liblz4-1.9.2_1,1               LZ4 compression library, lossless and very fast
+libnghttp2-1.41.0              HTTP/2.0 C Library
+libpaper-1.1.24.4              Library providing routines for paper size management
+libunwind-20200331             Generic stack unwinding library
+libuv-1.38.0                   Multi-platform support library with a focus on asynchronous I/O
+libxml2-2.9.10                 XML parser library for GNOME
+mod_php74-7.4.7                PHP Scripting Language
+mysql80-client-8.0.20_1        Multithreaded SQL database (client)
+mysql80-server-8.0.20_1        Multithreaded SQL database (server)
+node-14.4.0                    V8 JavaScript for client and server
+openldap-client-2.4.50         Open source LDAP client implementation
+pcre-8.44                      Perl Compatible Regular Expressions library
+pcre2-10.35                    Perl Compatible Regular Expressions library, version 2
+perl5-5.30.3                   Practical Extraction and Report Language
+php74-7.4.7                    PHP Scripting Language
+php74-json-7.4.8               The json shared extension for php
+php74-mysqli-7.4.7             The mysqli shared extension for php
+php74-pdo-7.4.7                The pdo shared extension for php
+php74-pdo_mysql-7.4.7          The pdo_mysql shared extension for php
+php74-pear-1.10.6              PEAR framework for PHP
+php74-pear-Services_JSON-1.0.3 PHP implementation of json_encode/decode
+php74-pecl-json_post-1.0.2     JSON POST handler in PHP
+php74-pecl-jsond-1.4.0         JavaScript Object Notation in PHP
+php74-xml-7.4.8                The xml shared extension for php
+php74-zlib-7.4.8               The zlib shared extension for php
+pkg-1.14.6                     Package manager
+protobuf-3.12.3,1              Data interchange format library
+psutils-1.17_5                 Utilities for manipulating PostScript documents
+readline-8.0.4                 Library for editing command lines as they are typed
+uchardet-0.0.7                 Universal charset detection library
+zstd-1.4.5                     Fast real-time compression algorithm
