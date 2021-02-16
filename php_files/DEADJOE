@@ -1,0 +1,45 @@
+
+*** These modified files were found in JOE when it aborted on Thu Jul 23 06:18:04 2020
+*** JOE was aborted because the terminal closed
+
+*** File 'RN.php'
+<?php
+    header("Access-Control-Allow-Origin:*");
+    header("Content-Type: application/json");
+    $data = ["fir"=>10, "sec"=>15];
+    
+    $key = "example_key";
+    $payload = [
+      "iss" => "http://example.org",
+      "aud" => "http://example.com",
+      "iat" => 1356999524,
+      "nbf" => 1357000000
+    ];
+
+    /**
+    * IMPORTANT:
+    * You must specify supported algorithms for your application. See
+    * https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-40
+    * for a list of spec-compliant algorithms.
+    */
+    $jwt = JWT::encode($payload, $key);
+    echo json_encode($data);
+?>
+*** File '(Unnamed)'
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+RN.php
+
+*** File '* Startup Log *'
+Processing '/usr/local/etc/joe/joerc'...
+Processing '/usr/local/etc/joe/ftyperc'...
+Finished processing /usr/local/etc/joe/ftyperc
+Finished processing /usr/local/etc/joe/joerc
