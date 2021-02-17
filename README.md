@@ -4,3 +4,6 @@ Demo:https://youtu.be/zaIPjwIsqU8
   ReactNative可以快速的建置於Android以及iOS雙平台上。效果或許不及個平台上的Native Language。但可省去開發雙平台的時間。
   version:
 ## 測試工具Expo
+
+## Server File(Virtual machine image)
+Link:https://drive.google.com/file/d/1cE0TcmCRLwsQT3np87Y2IWAKYLcakwez/view?usp=sharing</br>
